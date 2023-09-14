@@ -1,0 +1,95 @@
+{
+	"TabLabel": "SetImageData Benchmark",
+	"InitTabSize": [630, 650],
+	"InitTabPosition": [200, 100],
+    "InitPyCmd": "import set_image_data_test, importlib; importlib.reload(set_image_data_test); chameleon_setimagetest = set_image_data_test.set_image_test.SetImageDataTest(%JsonPath)",
+    "Root": {
+        "SVerticalBox":
+        {
+            "OnTick": "chameleon_setimagetest.on_tick()",
+            "Slots": [
+                {
+                    "SImage": {
+                        "Aka": "SImage_A"
+                    }
+                },
+                {
+                    "AutoHeight": true,
+                    "SHorizontalBox": 
+                    {
+                        "Slots": [
+                            {
+                                "AutoWidth": true,
+                                "SButton": {
+                                    "Text": "Clear",
+                                    "ContentPadding": [-4, 2],
+                                    "OnClick": "chameleon_setimagetest.on_clear_click()"
+                                }
+                            },
+                            {
+                                "AutoWidth": true,
+                                "SButton": {
+                                    "Text": "TArray<uint8>",
+                                    "ContentPadding": [-4, 2],
+                                    "OnClick": "chameleon_setimagetest.set_image_with_uint8()"
+                                }
+                            },
+                            {
+                                "AutoWidth": true,
+                                "SButton": {
+                                    "Text": "TArray<uint8> compress",
+                                    "ContentPadding": [-4, 2],
+                                    "OnClick": "chameleon_setimagetest.set_image_with_uint8_compressed()"
+                                }
+                            },
+                            {
+                                "AutoWidth": true,
+                                "SButton": {
+                                    "Text": "base64 str",
+                                    "ContentPadding": [-4, 2],
+                                    "OnClick": "chameleon_setimagetest.set_image_with_base64()"
+                                }
+                            },
+                            {
+                                "AutoWidth": true,
+                                "SButton": {
+                                    "Text": "compress then base64",
+                                    "ContentPadding": [-4, 2],
+                                    "OnClick": "chameleon_setimagetest.set_image_with_compress_then_base64()"
+                                }
+                            },
+                            {
+                                "SButton": {
+                                    "ContentPadding": [-4, 2],
+                                    "Text": "Memory Copy",
+                                    "OnClick": "chameleon_setimagetest.on_memory_click()"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "AutoHeight": true,
+                    "SHorizontalBox":
+                    {
+                        "Slots": [
+                            {
+                                "SButton": {
+                                    "Text": "Play 1080p",
+                                    "OnClick": "chameleon_setimagetest.on_play_video()"
+                                }
+                            },
+                            {
+                                "AutoWidth": true,
+                                "SButton": {
+                                    "Text": "Stop",
+                                    "OnClick": "chameleon_setimagetest.on_stop_click()"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}
